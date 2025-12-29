@@ -3,79 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>The Diamond Whale</title>
-  <meta name="description" content="Forged under pressure. Standing with the whales. No PvP — just conviction, transparency, and execution." />
+  <title>The American Whale</title>
+  <meta name="description" content="Built for war, funded by freedom. No PvP — just conviction, transparency, and execution." />
   <meta name="theme-color" content="#070A0F" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="The Diamond Whale" />
-  <meta property="og:description" content="Forged under pressure. Standing with the whales." />
+  <meta property="og:title" content="The American Whale" />
+  <meta property="og:description" content="Built for war, funded by freedom. No PvP — just conviction." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
-  <header class="header" role="banner">
+  <!-- Background -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__glow"></div>
+    <div class="bg__grain"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="top">
     <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="The Diamond Whale Home">
-        <span class="brand__mark" aria-hidden="true">◇</span>
-        <span class="brand__name">The Diamond Whale</span>
+      <a class="brand" href="#top" aria-label="The American Whale">
+        <span class="brand__mark">◆</span>
+        <span class="brand__name">The American Whale</span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <nav class="nav" aria-label="Primary">
         <a href="#lore">Lore</a>
         <a href="#ecosystem">Ecosystem</a>
         <a href="#community">Community</a>
       </nav>
 
-      <button class="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
 
-    <!-- Mobile menu overlay -->
-    <div class="mobileNav" id="mobileNav" aria-hidden="true">
-      <div class="mobileNav__panel">
-        <div class="mobileNav__head">
-          <div class="mobileNav__title">Navigate</div>
-          <button class="mobileNav__close" type="button" aria-label="Close menu">✕</button>
-        </div>
-
-        <a href="#lore">Lore</a>
-        <a href="#ecosystem">Ecosystem</a>
-        <a href="#community">Community</a>
-
-        <div class="mobileNav__foot">
-          <a class="btn btn--primary btn--full" href="https://x.com/i/communities/2005460121854283871" target="_blank" rel="noreferrer">
-            Join the Community
-          </a>
-        </div>
-      </div>
-      <div class="mobileNav__backdrop" data-close="true" aria-hidden="true"></div>
+    <div class="mobileNav" id="mobileNav" hidden>
+      <a href="#lore">Lore</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#community">Community</a>
     </div>
   </header>
 
-  <main id="top" class="main">
+  <main>
     <!-- HERO -->
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
           <div class="pill">
-            <span class="dot" aria-hidden="true"></span>
-            Forged under pressure • Built for conviction
+            <span class="dot"></span>
+            Built for war • Funded by freedom • No PvP
           </div>
 
           <h1 class="h1">
-            The Whale That <span class="accent">Emerges</span>.
+            The Whale That <span class="accent">Stands</span>. <span class="flag">🇺🇸</span>
           </h1>
 
           <p class="sub">
-            Diamond Whale is not here to PvP. We’re here to set a standard:
+            The American Whale is not here to PvP. We’re here to set a standard:
             <strong>transparency</strong>, <strong>execution</strong>, and <strong>community-first</strong> momentum —
             alongside the whales, not against them.
           </p>
@@ -108,23 +100,26 @@
         <div class="hero__art">
           <div class="card card--banner">
             <img
-              src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/A8002605-938D-43C3-BE4C-C29D352BA824.png"
-              alt="Diamond Whale Banner"
+              src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/IMG_9234.jpeg"
+              alt="The American Whale Banner"
               loading="eager"
+              decoding="async"
             />
+            <div class="card__fade"></div>
           </div>
 
           <div class="card card--token">
             <div class="tokenRow">
               <img
                 class="tokenImg"
-                src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/62CC648A-F546-48FE-97E2-C9AB846AB719.png"
-                alt="Diamond Whale Token"
+                src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/IMG_9234.jpeg"
+                alt="The American Whale Token"
                 loading="lazy"
+                decoding="async"
               />
               <div class="tokenText">
-                <div class="tokenTitle">Diamond Whale</div>
-                <div class="tokenTag">Lore-driven • Premium aesthetic • Community-first</div>
+                <div class="tokenTitle">The American Whale</div>
+                <div class="tokenTag">Patriot energy • Premium lore • Community-first</div>
               </div>
             </div>
 
@@ -139,20 +134,22 @@
       </div>
     </section>
 
+    <div class="mist" aria-hidden="true"></div>
+
     <!-- LORE -->
     <section id="lore" class="section">
       <div class="container">
         <h2 class="h2">Lore (Simple. Serious. True.)</h2>
         <p class="lead">
-          In the trenches, pressure breaks most people. It also forges diamonds.
-          Diamond Whale is the symbol of the ones who didn’t fold.
+          In the trenches, pressure breaks most people. It also forges legends.
+          The American Whale is the symbol of the ones who didn’t fold — who built, defended, and kept it real.
         </p>
 
         <div class="grid3">
           <div class="glass">
             <div class="glass__title">White Whale</div>
             <p class="glass__text">
-              Justice • transparency • community defense. A movement with real purpose.
+              Accountability • transparency • defense. A movement with real purpose.
             </p>
           </div>
 
@@ -163,113 +160,111 @@
             </p>
           </div>
 
-          <div class="glass">
-            <div class="glass__title">Diamond Whale</div>
+          <div class="glass glass--patriot">
+            <div class="glass__title">The American Whale 🇺🇸</div>
             <p class="glass__text">
-              Pressure-forged resolve. Standing with whales — not competing with them.
+              Built for war, funded by freedom. No PvP — just standards, discipline, and momentum.
             </p>
           </div>
         </div>
 
         <div class="quote">
-          <div class="quote__line" aria-hidden="true"></div>
+          <div class="quote__line"></div>
           <p class="quote__text">
-            “We don’t push each other down — we lift together. Strong hands. Shared vision. Same direction.”
+            “We don’t chase pumps — we cause them. Liquidity loaded. Oceans secured.”
           </p>
         </div>
       </div>
     </section>
 
+    <div class="mist" aria-hidden="true"></div>
+
     <!-- ECOSYSTEM -->
     <section id="ecosystem" class="section">
-  <div class="container">
-    <div class="sectionHead">
-      <h2 class="h2">The Whale Ecosystem</h2>
-      <p class="lead">
-        Different paths. Same ocean. These communities are not enemies — they’re proof the trenches can produce something real.
-      </p>
-    </div>
-
-    <div class="featuredGrid">
-      <!-- BLACK WHALE -->
-      <article class="featuredCard">
-        <div class="featuredCard__media">
-          <div class="featuredGlow featuredGlow--teal" aria-hidden="true"></div>
-          <img
-  class="featuredImg featuredImg--black"
-  src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/IMG_9198.jpeg"
-  alt="Black Whale Token"
-  loading="lazy"
-/>
-          <div class="featuredBadge">Ally</div>
-        </div>
-
-        <div class="featuredCard__body">
-          <div class="featuredTop">
-            <div>
-              <div class="featuredTitle">Black Whale</div>
-              <div class="featuredSub">Execution • scaling • long-term</div>
-            </div>
-          </div>
-
-          <p class="featuredText">
-            Execution-minded. Built for long-term scaling. No theatrics — just work.
+      <div class="container">
+        <div class="sectionHead">
+          <h2 class="h2">The Whale Ecosystem</h2>
+          <p class="lead">
+            Different paths. Same ocean. These communities aren’t enemies — they’re proof the trenches can produce something real.
           </p>
-
-          <div class="featuredLinks">
-            <a class="chip" href="https://blackwhale.fun/" target="_blank" rel="noreferrer">Website</a>
-            <a class="chip" href="https://x.com/blaaackguy?s=21" target="_blank" rel="noreferrer">X Profile</a>
-            <a class="chip chip--primary" href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=8y45AJzCUBSZL1UDFQRzCKovQBLQFudBrpPeg5yNpump" target="_blank" rel="noreferrer">Jupiter Swap</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- WHITE WHALE -->
-      <article class="featuredCard">
-        <div class="featuredCard__media">
-          <div class="featuredGlow featuredGlow--violet" aria-hidden="true"></div>
-          <img
-  class="featuredImg featuredImg--white"
-  src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/IMG_9222.jpeg"
-  alt="White Whale Token"
-  loading="lazy"
-/>
-          <div class="featuredBadge">Ally</div>
         </div>
 
-        <div class="featuredCard__body">
-          <div class="featuredTop">
-            <div>
-              <div class="featuredTitle">White Whale</div>
-              <div class="featuredSub">Accountability • transparency • defense</div>
+        <div class="featuredGrid">
+          <!-- Black Whale -->
+          <article class="featured">
+            <div class="featured__media">
+              <img
+                src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/IMG_9198.jpeg"
+                alt="Black Whale"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="badge">Ally</span>
             </div>
-          </div>
 
-          <p class="featuredText">
-            A community symbol for accountability, transparency, and protecting users.
-          </p>
+            <div class="featured__body">
+              <div class="featured__titleRow">
+                <h3 class="featured__title">Black Whale</h3>
+                <div class="featured__kicker">Execution • scaling • long-term</div>
+              </div>
 
-          <div class="featuredLinks">
-            <a class="chip" href="https://whitewhalememe.com/" target="_blank" rel="noreferrer">Website</a>
-            <a class="chip" href="https://x.com/whitewhalememe?s=21" target="_blank" rel="noreferrer">X Profile</a>
-            <a class="chip chip--primary" href="https://join.pump.fun/HSag/ztlivq31" target="_blank" rel="noreferrer">Join / Pump</a>
-          </div>
+              <p class="featured__text">
+                Execution-minded. Built for long-term scaling. No theatrics — just work.
+              </p>
+
+              <div class="btnRow">
+                <a class="chip" href="https://blackwhale.fun/" target="_blank" rel="noreferrer">Website</a>
+                <a class="chip" href="https://x.com/blaaackguy?s=21" target="_blank" rel="noreferrer">X Profile</a>
+                <a class="chip" href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=8y45AJzCUBSZL1UDFQRzCKovQBLQFudBrpPeg5yNpump" target="_blank" rel="noreferrer">Jupiter Swap</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- White Whale -->
+          <article class="featured">
+            <div class="featured__media">
+              <img
+                src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/IMG_9222.jpeg"
+                alt="White Whale"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="badge">Ally</span>
+            </div>
+
+            <div class="featured__body">
+              <div class="featured__titleRow">
+                <h3 class="featured__title">White Whale</h3>
+                <div class="featured__kicker">Accountability • transparency • defense</div>
+              </div>
+
+              <p class="featured__text">
+                A community symbol for accountability, transparency, and protecting users.
+              </p>
+
+              <div class="btnRow">
+                <a class="chip" href="https://whitewhalememe.com/" target="_blank" rel="noreferrer">Website</a>
+                <a class="chip" href="https://x.com/whitewhalememe?s=21" target="_blank" rel="noreferrer">X Profile</a>
+                <a class="chip" href="https://join.pump.fun/HSag/ztlivq31" target="_blank" rel="noreferrer">Join / Pump</a>
+              </div>
+            </div>
+          </article>
         </div>
-      </article>
-    </div>
 
-    <div class="notice">
-      <strong>No PvP.</strong> Diamond Whale stands with the whales. We link to allies openly. The goal is bigger than one chart.
-    </div>
-  </div>
-</section>
+        <div class="notice">
+          <strong>No PvP.</strong> The American Whale stands with the whales. We link to allies openly. The goal is bigger than one chart.
+        </div>
+      </div>
+    </section>
+
+    <div class="mist" aria-hidden="true"></div>
 
     <!-- COMMUNITY -->
     <section id="community" class="section">
       <div class="container">
         <div class="communityCard">
           <div class="communityCard__copy">
-            <h2 class="h2">The Diamond Whale Community</h2>
+            <h2 class="h2">The American Whale Community</h2>
             <p class="lead">
               This is where we build in public, keep it clean, and prove we’re serious before anything launches.
             </p>
@@ -290,7 +285,7 @@
           </div>
 
           <div class="communityCard__badge">
-            <div class="badgeOrb" aria-hidden="true"></div>
+            <div class="badgeOrb"></div>
             <div class="badgeText">
               <div class="badgeTitle">Pre-Launch Build</div>
               <div class="badgeSub">Quality first. Lore always.</div>
@@ -301,10 +296,10 @@
         <footer class="footer">
           <div class="footer__row">
             <div class="footer__brand">
-              <span class="brand__mark" aria-hidden="true">◇</span> The Diamond Whale
+              <span class="brand__mark">◆</span> The American Whale
             </div>
             <div class="footer__fine">
-              Built mobile-first • No PvP • “Pressure-forged”
+              Built mobile-first • No PvP • “Funded by freedom”
             </div>
           </div>
         </footer>
