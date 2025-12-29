@@ -1,16 +1,21 @@
 const menuBtn = document.querySelector('.menuBtn');
 const mobileNav = document.querySelector('.mobileNav');
-
-function closeMenu() {
-  if (!menuBtn || !mobileNav) return;
-  menuBtn.setAttribute('aria-expanded', 'false');
-  mobileNav.dataset.open = 'false';
-}
+const closeBtn = document.querySelector('.mobileNav__close');
 
 function openMenu() {
   if (!menuBtn || !mobileNav) return;
   menuBtn.setAttribute('aria-expanded', 'true');
-  mobileNav.dataset.open = 'true';
+  mobileNav.classList.add('is-open');
+  mobileNav.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('menu-open');
+}
+
+function closeMenu() {
+  if (!menuBtn || !mobileNav) return;
+  menuBtn.setAttribute('aria-expanded', 'false');
+  mobileNav.classList.remove('is-open');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('menu-open');
 }
 
 if (menuBtn && mobileNav) {
@@ -20,28 +25,26 @@ if (menuBtn && mobileNav) {
     else openMenu();
   });
 
-  // close when clicking a link
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+  // close when clicking backdrop
+  mobileNav.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target && target.dataset && target.dataset.close === 'true') closeMenu();
+  });
+
+  // auto-close when clicking a link
   mobileNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', closeMenu);
+    a.addEventListener('click', () => closeMenu());
   });
 
-  // close when tapping outside (mobile polish)
-  document.addEventListener('click', (e) => {
-    const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
-    if (!isOpen) return;
-
-    const clickedInsideMenu = mobileNav.contains(e.target);
-    const clickedButton = menuBtn.contains(e.target);
-    if (!clickedInsideMenu && !clickedButton) closeMenu();
-  });
-
-  // close on escape
+  // escape key closes
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMenu();
   });
 }
 
-// Copy link button
+// Copy community link
 const copyBtn = document.getElementById('copyCommunity');
 const linkText = document.getElementById('communityLinkText');
 
