@@ -277,6 +277,15 @@ body.menuOpen{
 .micro__value{color:var(--text); font-weight:900}
 .micro--muted .micro__value{color:var(--muted)}
 
+.mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  letter-spacing: .2px;
+  word-break: break-all;
+}
+
+.ctaRow--tight{ margin: 10px 0 0; }
+
 /* Sections */
 .section{padding: 26px 0}
 .h2{margin:0 0 10px;font-size: 24px;letter-spacing: -.6px;}
