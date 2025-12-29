@@ -1,6 +1,7 @@
-const menuBtn = document.querySelector('.menuBtn');
-const mobileNav = document.querySelector('.mobileNav');
-const closeBtn = document.querySelector('.mobileNav__close');
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const closeBtn = document.getElementById('menuCloseBtn');
+const backdrop = document.getElementById('menuBackdrop');
 
 function openMenu() {
   if (!menuBtn || !mobileNav) return;
@@ -26,16 +27,11 @@ if (menuBtn && mobileNav) {
   });
 
   if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-
-  // close when clicking backdrop
-  mobileNav.addEventListener('click', (e) => {
-    const target = e.target;
-    if (target && target.dataset && target.dataset.close === 'true') closeMenu();
-  });
+  if (backdrop) backdrop.addEventListener('click', closeMenu);
 
   // auto-close when clicking a link
   mobileNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => closeMenu());
+    a.addEventListener('click', closeMenu);
   });
 
   // escape key closes
@@ -57,6 +53,23 @@ if (copyBtn && linkText) {
     } catch (e) {
       copyBtn.textContent = "Copy failed";
       setTimeout(() => (copyBtn.textContent = "Copy Community Link"), 1200);
+    }
+  });
+}
+
+// Copy CA
+const copyCA = document.getElementById('copyCA');
+const caText = document.getElementById('caText');
+
+if (copyCA && caText) {
+  copyCA.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(caText.textContent.trim());
+      copyCA.textContent = "Copied ✓";
+      setTimeout(() => (copyCA.textContent = "Copy CA"), 1200);
+    } catch (e) {
+      copyCA.textContent = "Copy failed";
+      setTimeout(() => (copyCA.textContent = "Copy CA"), 1200);
     }
   });
 }
