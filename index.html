@@ -14,7 +14,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./styles.css" />
 </head>
@@ -33,17 +33,17 @@
         <a href="#community">Community</a>
       </nav>
 
-      <button class="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <button class="menuBtn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
     </div>
 
     <!-- Mobile menu overlay -->
     <div class="mobileNav" id="mobileNav" aria-hidden="true">
-      <div class="mobileNav__panel">
+      <div class="mobileNav__panel" role="dialog" aria-modal="true" aria-label="Mobile navigation">
         <div class="mobileNav__head">
           <div class="mobileNav__title">Navigate</div>
-          <button class="mobileNav__close" type="button" aria-label="Close menu">✕</button>
+          <button class="mobileNav__close" id="menuCloseBtn" type="button" aria-label="Close menu">✕</button>
         </div>
 
         <a href="#lore">Lore</a>
@@ -51,12 +51,13 @@
         <a href="#community">Community</a>
 
         <div class="mobileNav__foot">
-          <a class="btn btn--primary btn--full" href="https://x.com/i/communities/2005460121854283871" target="_blank" rel="noreferrer">
+          <a class="btn btn--primary btn--full" href="https://x.com/i/communities/2005671166376313214" target="_blank" rel="noreferrer">
             Join the Community
           </a>
         </div>
       </div>
-      <div class="mobileNav__backdrop" data-close="true" aria-hidden="true"></div>
+
+      <div class="mobileNav__backdrop" id="menuBackdrop" aria-hidden="true"></div>
     </div>
   </header>
 
@@ -81,7 +82,7 @@
           </p>
 
           <div class="ctaRow">
-            <a class="btn btn--primary" href="https://x.com/i/communities/2005460121854283871" target="_blank" rel="noreferrer">
+            <a class="btn btn--primary" href="https://x.com/i/communities/2005671166376313214" target="_blank" rel="noreferrer">
               Join the Community
             </a>
             <a class="btn btn--ghost" href="#ecosystem">
@@ -92,23 +93,29 @@
           <div class="stats">
             <div class="stat">
               <div class="stat__label">Status</div>
-              <div class="stat__value">Pre-Launch</div>
+              <div class="stat__value">Live on Pump</div>
             </div>
             <div class="stat">
-              <div class="stat__label">Focus</div>
-              <div class="stat__value">1000% Quality</div>
+              <div class="stat__label">Contract</div>
+              <div class="stat__value">9wm7…pump</div>
             </div>
             <div class="stat">
               <div class="stat__label">Stance</div>
               <div class="stat__value">No PvP</div>
             </div>
           </div>
+
+          <div class="ctaRow" style="margin-top:10px;">
+            <a class="btn btn--ghost" href="https://join.pump.fun/HSag/zjav74hd" target="_blank" rel="noreferrer">
+              Buy on Pump
+            </a>
+          </div>
         </div>
 
         <div class="hero__art">
           <div class="card card--banner">
             <img
-              src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/A8002605-938D-43C3-BE4C-C29D352BA824.png"
+              src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/IMG_9239.jpeg"
               alt="Diamond Whale Banner"
               loading="eager"
             />
@@ -118,7 +125,7 @@
             <div class="tokenRow">
               <img
                 class="tokenImg"
-                src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/62CC648A-F546-48FE-97E2-C9AB846AB719.png"
+                src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/IMG_9240.jpeg"
                 alt="Diamond Whale Token"
                 loading="lazy"
               />
@@ -131,13 +138,26 @@
             <div class="divider"></div>
 
             <div class="micro">
-              <span class="micro__label">Launch</span>
-              <span class="micro__value">When the site is perfect.</span>
+              <span class="micro__label">CA</span>
+              <span class="micro__value" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                9wm7WvhDKY6Gnd6ppeCE5WcznPp5zwTCwyAf6oZFpump
+              </span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="micro">
+              <span class="micro__label">Pump</span>
+              <span class="micro__value">
+                <a href="https://join.pump.fun/HSag/zjav74hd" target="_blank" rel="noreferrer">Open</a>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <div class="mist" aria-hidden="true"></div>
 
     <!-- LORE -->
     <section id="lore" class="section">
@@ -180,89 +200,89 @@
       </div>
     </section>
 
+    <div class="mist" aria-hidden="true"></div>
+
     <!-- ECOSYSTEM -->
     <section id="ecosystem" class="section">
-  <div class="container">
-    <div class="sectionHead">
-      <h2 class="h2">The Whale Ecosystem</h2>
-      <p class="lead">
-        Different paths. Same ocean. These communities are not enemies — they’re proof the trenches can produce something real.
-      </p>
-    </div>
-
-    <div class="featuredGrid">
-      <!-- BLACK WHALE -->
-      <article class="featuredCard">
-        <div class="featuredCard__media">
-          <div class="featuredGlow featuredGlow--teal" aria-hidden="true"></div>
-          <img
-  class="featuredImg featuredImg--black"
-  src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/IMG_9198.jpeg"
-  alt="Black Whale Token"
-  loading="lazy"
-/>
-          <div class="featuredBadge">Ally</div>
-        </div>
-
-        <div class="featuredCard__body">
-          <div class="featuredTop">
-            <div>
-              <div class="featuredTitle">Black Whale</div>
-              <div class="featuredSub">Execution • scaling • long-term</div>
-            </div>
-          </div>
-
-          <p class="featuredText">
-            Execution-minded. Built for long-term scaling. No theatrics — just work.
+      <div class="container">
+        <div class="sectionHead">
+          <h2 class="h2">The Whale Ecosystem</h2>
+          <p class="lead">
+            Different paths. Same ocean. These communities are not enemies — they’re proof the trenches can produce something real.
           </p>
-
-          <div class="featuredLinks">
-            <a class="chip" href="https://blackwhale.fun/" target="_blank" rel="noreferrer">Website</a>
-            <a class="chip" href="https://x.com/blaaackguy?s=21" target="_blank" rel="noreferrer">X Profile</a>
-            <a class="chip chip--primary" href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=8y45AJzCUBSZL1UDFQRzCKovQBLQFudBrpPeg5yNpump" target="_blank" rel="noreferrer">Jupiter Swap</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- WHITE WHALE -->
-      <article class="featuredCard">
-        <div class="featuredCard__media">
-          <div class="featuredGlow featuredGlow--violet" aria-hidden="true"></div>
-          <img
-  class="featuredImg featuredImg--white"
-  src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/IMG_9222.jpeg"
-  alt="White Whale Token"
-  loading="lazy"
-/>
-          <div class="featuredBadge">Ally</div>
         </div>
 
-        <div class="featuredCard__body">
-          <div class="featuredTop">
-            <div>
-              <div class="featuredTitle">White Whale</div>
-              <div class="featuredSub">Accountability • transparency • defense</div>
+        <div class="featuredGrid">
+          <!-- BLACK WHALE -->
+          <article class="featuredCard">
+            <div class="featuredCard__media">
+              <div class="featuredGlow featuredGlow--teal" aria-hidden="true"></div>
+              <img
+                class="featuredImg featuredImg--black"
+                src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/IMG_9198.jpeg"
+                alt="Black Whale Token"
+                loading="lazy"
+              />
+              <div class="featuredBadge">Ally</div>
             </div>
-          </div>
 
-          <p class="featuredText">
-            A community symbol for accountability, transparency, and protecting users.
-          </p>
+            <div class="featuredCard__body">
+              <div>
+                <div class="featuredTitle">Black Whale</div>
+                <div class="featuredSub">Execution • scaling • long-term</div>
+              </div>
 
-          <div class="featuredLinks">
-            <a class="chip" href="https://whitewhalememe.com/" target="_blank" rel="noreferrer">Website</a>
-            <a class="chip" href="https://x.com/whitewhalememe?s=21" target="_blank" rel="noreferrer">X Profile</a>
-            <a class="chip chip--primary" href="https://join.pump.fun/HSag/ztlivq31" target="_blank" rel="noreferrer">Join / Pump</a>
-          </div>
+              <p class="featuredText">
+                Execution-minded. Built for long-term scaling. No theatrics — just work.
+              </p>
+
+              <div class="featuredLinks">
+                <a class="chip" href="https://blackwhale.fun/" target="_blank" rel="noreferrer">Website</a>
+                <a class="chip" href="https://x.com/blaaackguy?s=21" target="_blank" rel="noreferrer">X Profile</a>
+                <a class="chip chip--primary" href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=8y45AJzCUBSZL1UDFQRzCKovQBLQFudBrpPeg5yNpump" target="_blank" rel="noreferrer">Jupiter Swap</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- WHITE WHALE -->
+          <article class="featuredCard">
+            <div class="featuredCard__media">
+              <div class="featuredGlow featuredGlow--violet" aria-hidden="true"></div>
+              <img
+                class="featuredImg featuredImg--white"
+                src="https://raw.githubusercontent.com/LandoCrissian/The-Diamond-Whale/refs/heads/main/IMG_9222.jpeg"
+                alt="White Whale Token"
+                loading="lazy"
+              />
+              <div class="featuredBadge">Ally</div>
+            </div>
+
+            <div class="featuredCard__body">
+              <div>
+                <div class="featuredTitle">White Whale</div>
+                <div class="featuredSub">Accountability • transparency • defense</div>
+              </div>
+
+              <p class="featuredText">
+                A community symbol for accountability, transparency, and protecting users.
+              </p>
+
+              <div class="featuredLinks">
+                <a class="chip" href="https://whitewhalememe.com/" target="_blank" rel="noreferrer">Website</a>
+                <a class="chip" href="https://x.com/whitewhalememe?s=21" target="_blank" rel="noreferrer">X Profile</a>
+                <a class="chip chip--primary" href="https://join.pump.fun/HSag/ztlivq31" target="_blank" rel="noreferrer">Join / Pump</a>
+              </div>
+            </div>
+          </article>
         </div>
-      </article>
-    </div>
 
-    <div class="notice">
-      <strong>No PvP.</strong> Diamond Whale stands with the whales. We link to allies openly. The goal is bigger than one chart.
-    </div>
-  </div>
-</section>
+        <div class="notice">
+          <strong>No PvP.</strong> Diamond Whale stands with the whales. We link to allies openly. The goal is bigger than one chart.
+        </div>
+      </div>
+    </section>
+
+    <div class="mist" aria-hidden="true"></div>
 
     <!-- COMMUNITY -->
     <section id="community" class="section">
@@ -275,24 +295,36 @@
             </p>
 
             <div class="ctaRow">
-              <a class="btn btn--primary" href="https://x.com/i/communities/2005460121854283871" target="_blank" rel="noreferrer">
+              <a class="btn btn--primary" href="https://x.com/i/communities/2005671166376313214" target="_blank" rel="noreferrer">
                 Join on X
               </a>
               <button class="btn btn--ghost" id="copyCommunity" type="button">
                 Copy Community Link
               </button>
+              <a class="btn btn--ghost" href="https://join.pump.fun/HSag/zjav74hd" target="_blank" rel="noreferrer">
+                Buy on Pump
+              </a>
             </div>
 
             <div class="micro micro--muted">
               <span class="micro__label">Link</span>
-              <span class="micro__value" id="communityLinkText">https://x.com/i/communities/2005460121854283871</span>
+              <span class="micro__value" id="communityLinkText">https://x.com/i/communities/2005671166376313214</span>
+            </div>
+
+            <div class="micro micro--muted" style="margin-top:8px;">
+              <span class="micro__label">CA</span>
+              <span class="micro__value" id="caText">9wm7WvhDKY6Gnd6ppeCE5WcznPp5zwTCwyAf6oZFpump</span>
+            </div>
+
+            <div class="ctaRow" style="margin-top:10px;">
+              <button class="btn btn--ghost" id="copyCA" type="button">Copy CA</button>
             </div>
           </div>
 
           <div class="communityCard__badge">
             <div class="badgeOrb" aria-hidden="true"></div>
             <div class="badgeText">
-              <div class="badgeTitle">Pre-Launch Build</div>
+              <div class="badgeTitle">Live Build</div>
               <div class="badgeSub">Quality first. Lore always.</div>
             </div>
           </div>
