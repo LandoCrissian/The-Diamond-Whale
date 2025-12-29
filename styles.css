@@ -440,8 +440,21 @@ section[id]{scroll-margin-top: calc(var(--headerH) + var(--safeTop) + 18px)}
 
 .featuredCard__media{
   position: relative;
-  height: 170px;
+  height: 190px;
   background: rgba(255,255,255,.03);
+}
+
+.featuredCard__media::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height: 78px;
+  background: linear-gradient(180deg,
+    rgba(7,10,15,0) 0%,
+    rgba(7,10,15,.55) 55%,
+    rgba(7,10,15,.85) 100%
+  );
+  pointer-events:none;
 }
 
 .featuredImg{
@@ -453,6 +466,13 @@ section[id]{scroll-margin-top: calc(var(--headerH) + var(--safeTop) + 18px)}
   transform: scale(1.02);
   filter: contrast(1.03) saturate(1.02);
 }
+
+/* Default framing */
+.featuredImg{ object-position: center 30%; }
+
+/* Per-card framing (fixes the Black Whale crop) */
+.featuredImg--black{ object-position: center 18%; }  /* pulls face into view */
+.featuredImg--white{ object-position: center 35%; }  /* keeps pill + lightning centered */
 
 .featuredGlow{
   position:absolute;
@@ -526,6 +546,7 @@ section[id]{scroll-margin-top: calc(var(--headerH) + var(--safeTop) + 18px)}
   border: 1px solid rgba(127,227,255,.30);
   background: linear-gradient(135deg, rgba(127,227,255,.18), rgba(185,167,255,.12));
 }
+
 
 /* Desktop: side-by-side featured cards */
 @media (min-width: 860px){
