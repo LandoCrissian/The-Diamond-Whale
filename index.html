@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>The Diamond Whale</title>
-  <meta name="description" content="Forged under pressure. Standing with the whales. No PvP — just conviction, transparency, and execution." />
+  <meta name="description" content="Forged under pressure. Standing with the whales. No PvP — conviction, transparency, and execution." />
   <meta name="theme-color" content="#070A0F" />
 
   <!-- Open Graph -->
@@ -14,46 +14,45 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Clean modern font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
-  <!-- Top Glow + Background -->
-  <div class="bg">
+  <!-- Background -->
+  <div class="bg" aria-hidden="true">
     <div class="bg__glow"></div>
     <div class="bg__grain"></div>
   </div>
 
-  <header class="header">
+  <!-- Header -->
+  <header class="header" id="siteHeader">
     <div class="container header__inner">
       <a class="brand" href="#">
         <span class="brand__mark">◇</span>
         <span class="brand__name">The Diamond Whale</span>
       </a>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="#lore">Lore</a>
         <a href="#ecosystem">Ecosystem</a>
         <a href="#community">Community</a>
       </nav>
 
-      <button class="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <button class="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
     </div>
 
-    <div class="mobileNav" hidden>
+    <div class="mobileNav" id="mobileNav" data-open="false">
       <a href="#lore">Lore</a>
       <a href="#ecosystem">Ecosystem</a>
       <a href="#community">Community</a>
     </div>
   </header>
 
-  <main>
+  <main class="main">
     <!-- HERO -->
     <section class="hero">
       <div class="container hero__grid">
@@ -99,13 +98,24 @@
         </div>
 
         <div class="hero__art">
+          <!-- Banner -->
           <div class="card card--banner">
-            <img src="./assets/diamond-whale-banner.png" alt="Diamond Whale Banner" />
+            <img
+              src="./A8002605-938D-43C3-BE4C-C29D352BA824.png"
+              alt="Diamond Whale Banner"
+              loading="eager"
+            />
           </div>
 
+          <!-- Token -->
           <div class="card card--token">
             <div class="tokenRow">
-              <img class="tokenImg" src="./assets/diamond-whale-token.png" alt="Diamond Whale Token" />
+              <img
+                class="tokenImg"
+                src="./62CC648A-F546-48FE-97E2-C9AB846AB719.png"
+                alt="Diamond Whale Token"
+                loading="eager"
+              />
               <div class="tokenText">
                 <div class="tokenTitle">Diamond Whale</div>
                 <div class="tokenTag">Lore-driven • Premium aesthetic • Community-first</div>
@@ -175,31 +185,49 @@
         </div>
 
         <div class="grid2">
+          <!-- Black Whale -->
           <div class="panel">
             <div class="panel__top">
-              <div class="panel__title">Black Whale</div>
+              <div class="panel__left">
+                <img class="allyImg" src="./IMG_9198.jpeg" alt="Black Whale Token" loading="lazy" />
+                <div>
+                  <div class="panel__title">Black Whale</div>
+                  <div class="panel__sub">Execution • scaling • long-term</div>
+                </div>
+              </div>
               <div class="panel__badge">Ally</div>
             </div>
+
             <div class="panel__links">
               <a href="https://blackwhale.fun/" target="_blank" rel="noreferrer">Website</a>
               <a href="https://x.com/blaaackguy?s=21" target="_blank" rel="noreferrer">X Profile</a>
               <a href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=8y45AJzCUBSZL1UDFQRzCKovQBLQFudBrpPeg5yNpump" target="_blank" rel="noreferrer">Jupiter Swap</a>
             </div>
+
             <p class="panel__text">
               Execution-minded. Built for long-term scaling. No theatrics — just work.
             </p>
           </div>
 
+          <!-- White Whale -->
           <div class="panel">
             <div class="panel__top">
-              <div class="panel__title">White Whale</div>
+              <div class="panel__left">
+                <img class="allyImg" src="./IMG_9222.jpeg" alt="White Whale Token" loading="lazy" />
+                <div>
+                  <div class="panel__title">White Whale</div>
+                  <div class="panel__sub">Accountability • transparency • defense</div>
+                </div>
+              </div>
               <div class="panel__badge">Ally</div>
             </div>
+
             <div class="panel__links">
               <a href="https://whitewhalememe.com/" target="_blank" rel="noreferrer">Website</a>
               <a href="https://x.com/whitewhalememe?s=21" target="_blank" rel="noreferrer">X Profile</a>
               <a href="https://join.pump.fun/HSag/ztlivq31" target="_blank" rel="noreferrer">Join / Pump</a>
             </div>
+
             <p class="panel__text">
               A community symbol for accountability, transparency, and protecting users.
             </p>
@@ -226,7 +254,7 @@
               <a class="btn btn--primary" href="https://x.com/i/communities/2005460121854283871" target="_blank" rel="noreferrer">
                 Join on X
               </a>
-              <button class="btn btn--ghost" id="copyCommunity">
+              <button class="btn btn--ghost" id="copyCommunity" type="button">
                 Copy Community Link
               </button>
             </div>
