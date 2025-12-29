@@ -686,3 +686,36 @@ section[id]{scroll-margin-top: calc(var(--headerH) + var(--safeTop) + 18px)}
     flex: 1 1 100%;
   }
 }
+
+/* =========================
+   FIX: 1px seam/break between featured image + card body (iOS/Safari)
+   ========================= */
+
+.featuredCard__media{
+  overflow:hidden;                 /* ensures nothing leaks at the edge */
+  border-bottom: 0;                /* just in case */
+}
+
+.featuredCard__media::after{
+  bottom:-1px;                     /* overlaps body by 1px = seam gone */
+  height: 92px;                    /* a little taller fade */
+}
+
+.featuredImg{
+  transform: none;                 /* scaling can trigger seams on iOS */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  display:block;
+}
+
+/* Make the body start with the same dark tone so the transition is invisible */
+.featuredCard__body{
+  background: rgba(7,10,15,.55);
+  border-top: 0;
+}
+
+/* If you still see a faint line, this micro-overlap kills it */
+.featuredCard__body{
+  margin-top:-1px;
+  padding-top: 15px;
+}
