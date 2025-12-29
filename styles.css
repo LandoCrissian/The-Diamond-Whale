@@ -624,3 +624,65 @@ section[id]{scroll-margin-top: calc(var(--headerH) + var(--safeTop) + 18px)}
   .grid2{grid-template-columns: repeat(2,1fr)}
   .communityCard{grid-template-columns: 1.2fr .8fr; align-items:center}
 }
+
+/* =========================
+   COMMUNITY SECTION FIXES
+   (buttons + long link/CA overflow)
+   ========================= */
+
+/* Make button rows behave like a responsive grid */
+.ctaRow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  align-items:stretch;
+}
+
+/* Buttons in CTA rows should share space and wrap cleanly */
+.ctaRow .btn{
+  flex: 1 1 220px;          /* 3-up on wide screens, wraps on smaller */
+  text-align:center;
+  justify-content:center;
+  min-width: 0;             /* critical: allows flex items to shrink */
+}
+
+/* Fix long Link/CA overflow */
+.micro{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+
+.micro__label{
+  flex: 0 0 auto;
+  min-width: 44px;          /* keeps labels aligned (Link / CA) */
+}
+
+.micro__value{
+  flex: 1 1 auto;
+  min-width: 0;             /* critical: allows wrapping inside flex */
+  overflow-wrap: anywhere;  /* wraps long URLs / CA nicely */
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+/* Optional: make CA look cleaner */
+#caText{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12.5px;
+  opacity: .95;
+}
+
+/* On small screens: stack label above value so nothing can overflow */
+@media (max-width: 520px){
+  .micro{
+    flex-direction:column;
+    gap:6px;
+  }
+  .micro__label{
+    min-width: 0;
+  }
+  .ctaRow .btn{
+    flex: 1 1 100%;
+  }
+}
